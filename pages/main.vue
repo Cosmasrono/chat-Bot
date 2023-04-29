@@ -6,6 +6,10 @@
         Please note I answer specific questions. 🤨
       </p>
     </div>
+    <div class="">
+      <h1 class=" text-green-500">Hint</h1>
+      <p class=" ">ask question eg. Hi,hello,good morning</p>
+    </div>
 
     <div class="all">
       <div class="chatbot">
