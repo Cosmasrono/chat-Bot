@@ -1,104 +1,33 @@
 <template>
-  <div class=" bg-slate-800 text-white">
-    <div class="head">
-      <h1>STUDENT INQUIRY CHATBOT</h1>
-      <p>Hi, welcome I am an inquiry chatbot! Go ahead and send me a message. 😄<br>
-        Please note I answer specific questions. 🤨
-      </p>
+  <main class=" items-center justify-center flex flex-col ">
+    <div class=" text-4xl p-3 ml-3">
+     
+    <h1>Welcome and interact with <span class=" text-red-600 italic">wing Kabarak University</span></h1>
+    <h2>I am wing and ready to interact and help  Kabarak Students</h2>
     </div>
-
-    <div class="all">
-      <div class="chatbot">
-        <div class="chatbot-header">
-          <h2>Chatbot</h2>
-        </div>
-        <div class="chatbot-body">
-          <div class="chatbot-message" v-html="chatbotDialogHTML"></div>
-        </div>
-        <div class="chatbot-footer">
-          <input type="text" ref="chatbotText" placeholder="Type your message here...">
-          <button @click="handleUserInput">Send</button>
-        </div>
-      <!--   <div id="chatbot-input">
-          <input type="text" ref="chatbotText" placeholder="Ask me a question..."><br><br>
- -->
-          <button @click="handleUserInput">Submit</button>
-          <button @click="clear">Clear</button>
-        </div>
-
-      </div>
+    <div class=" flex md:flex-row gap-3 mt-4 pt-4 sm:flex-row sm:justify-between sm:items-center flex-col  ">
+        <img class=" hover:scale-105 " src="data:image/jpeg;base64,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" alt="">
+       <img class=" hover:scale-105 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR5BkeaVrl82ILBf9p-IcVf2k85h92I3USKY6JAH_Nj3LwFgKm7o379XOVi5nCsDtyad8&usqp=CAU" alt="">
+        <img class=" hover:scale-105 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQblSys9Y-KzI6m_HsKraxXOILMqKcXjcaPQg&usqp=CAU" alt="">
+        <img class=" hover:scale-105 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtXhn2qAN4o8VcPAPmXYSaUnC_roxq0PgC5g&usqp=CAU" alt="">
+        <img class=" hover:scale-105 " src="data:image/jpeg;base64,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" alt="">
     </div>
-
+    <div class=" flex pt-3 m-5">
+        <button @click="redirectToMain" class=" bg-red-700 rounded-md p-4 m-3">Get started</button>
+    </div>
+  </main>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      chatbotDialogHTML: "",
-      responses: {
-          "hi": "hi hello there",
-      "hello":"Hello, how may i help you today?",
-      "hey":"Hello, how can i assit you today?",
-      "good morning":"Good morning to you how may i assit you today?",
-      "morning":"Good morning to you how may i assit you today?",
-      "good evening":"  Good evening too how may i assit you today?",
-      "evening":"  Good evening too how may i assit you today?",
-      "good afternoon":"Good afternoon how may i assit you today?",
-      "afternoon":"Good afternoon how may i assit you today?",
-      "how are you":"As a language model, I do not have emotions,\n but I am functioning properly and am ready to assist you with any academic questions you may have.\n How can I assist you today?",
-      "school fees": "kindly visit kabarak student finance with your student ID for further assistance",
-      "school elections": "kabarak school elections are held annually, \n the current school president is Karen ",
-      "attachment": "PRE ATTACHMENT and POST ATTACHMENT",
-      "pre attachment":"This is only available for third year second semester students",
-      "post attachment":"This is only available for fourth year second semester students",
-      "missing marks": "Kindly visit school of business SAA secretary office ,\n get a missing marks form , \n fill the missing units and consult the secetrary for further assitances",
-      "incomplete marks": "This means that you are either missing the exam or cat marks, \n visit the SAA for further assistance",
-      "exam card":"Your exam card is only available  when you have cleared the school fee,\n you can then collect it from the school of business department",
-      "retake":"When you haven't met the  40% academic exam requirements you are required to re-register the unit again ",
-      "attachment letters":"The letters are issued when one has attained the correct academic score(i.e one retake,two missing marks) pick the letters from your respective school departments",
-      "lectures contacts":"",
-      "attachment assessment":"The assessment is done when the required duration is done where by  minimum duration is 2 months",
-      "transcript":"you can download it from your student's portal or you can ask the SAA  to help you print it",
-      "collection of certificate":"once you have completed your academic journey and graduated, you are required to come and collect your academic transcript from the admission's office",
-      "course registration":"NORMAL REGISTRATION,SPECIAL EXAMS ,RETAKE REGISTRATION,SUPPLEMENTARY EXAM",
-      "normal":"when you have cleared the previous semester school fees ",
-      "normal registration":"when you have cleared the previous semester school fees ",
-      "special exam":"when you had missed some exams with valid reasons the school is obliged to give you the exams.For further guidance you can contact the school SAA through <strong>+254712312312</strong> ",
-      "special":"when you had missed some exams with valid reasons the school is obliged to give you the exams.For further guidance you can contact the school SAA through <strong>+254712312312</strong> ",
-      "retake registration":"You are advised to visit your student's portal ,course registration section select retake option and register the unit you are retaking",
-      "supplementary exam":"This is offered only to students who are on their final year who are yet to graduate,incase they got a retake",
-      "supplementary":"This is offered only to students who are on their final year who are yet to graduate,incase they got a retake",
-      "graduation":"Those who have achieved the university academic requirements are allowed to graduate",
-      "graduation gowns":"the school will send a memo to your school email,explaining all the details,when and where to pick the gowns",
-      "graduation certificate":"once you have completed your academic journey and graduated, you are required to come and collect your academic transcript from the admission's office",
-      "timetable":"EXAMS OR CLASS TIMETABLE",
-      "exam timetable":"a draft timetable is usually released a month before and the final timetable is released days to exams",
-      "class timetable":"This is released a week before opening of the next semester",
-      "exam collision":"You are advised to visit the school timetabling office for further assistance",
-      "timetable collision":"You are advised to visit the school timetabling office for further assistance",
-      "lectures phone number":"",
-      "saa contact":" +25478345665",
-      "saa phone number":"+25478345665",
-      "exam qualification":"when you have paid full school fees and attained 80% class attendance",
-      "clearance form":"pick the forms from the admission office"
-      }
-    };
-  },
   methods: {
-    handleUserInput() {
-      let userInput = this.$refs.chatbotText.value.toLowerCase();
-      this.chatbotDialogHTML += `<div class="chatbot-message-user">${userInput}</div>`;
-      this.$refs.chatbotText.value = "";
-      this.chatbotDialogHTML += `<div class="chatbot-message-bot">${this.responses[userInput] || "Sorry, I don't understand that yet. 😅"}</div>`;
-    },
-
-      
-
-    clear() {
-      this.chatbotDialogHTML = "";
-    },
-
+    redirectToMain() {
+      this.$router.push({ name: 'main' }); // replace 'index' with the name of your index route
+    }
   }
-};
+}
 </script>
+
+<style>
+
+</style>
