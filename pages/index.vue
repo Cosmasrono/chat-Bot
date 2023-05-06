@@ -2,7 +2,7 @@
   <main class=" items-center justify-center flex flex-col ">
     <div class=" text-4xl p-3 ml-3">
      
-    <h1>Welcome and interact with <span class=" text-red-600 italic">wing Kabarak University</span></h1>
+    <h1>Welcome,interact with <span class=" text-red-600 italic">wing Kabarak University chatbot</span></h1>
     <h2>I am wing and ready to interact and help  Kabarak Students</h2>
     </div>
     <div class=" flex md:flex-row gap-3 mt-4 pt-4 sm:flex-row sm:justify-between sm:items-center flex-col  ">
